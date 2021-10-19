@@ -90,7 +90,7 @@ with tf.Session() as sess:
             for i in range(1, len(song), batch_size):
                 tr_x = song[i:i + batch_size]
                 sess.run(updt, feed_dict={x: tr_x})
-    save_path=saver.save(sess, "C:/Users/padmaNeerajKumar/Downloads/DL Project/model.ckpt")
+    save_path=saver.save(sess, "C:/Users/kamal/Downloads/DL Project/model.ckpt")
     print("Model saved in path:%s" %save_path)
     sample = gibbs_sample(1).eval(session=sess, feed_dict={x: np.zeros((10, n_visible))})
     for i in range(sample.shape[0]):
